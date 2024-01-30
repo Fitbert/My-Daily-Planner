@@ -1,80 +1,32 @@
-// var saveBtnEl = $('#saveBtn');
-// var timeBlockEl =$('#time-block');
-// // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// // the code isn't run until the browser has finished rendering all the elements
-// // in the html.
-// $(document).ready(function() {
-//   var dateFormat = moment().format("MMMM Do YYYY");
-//   let curDate = document.getElementById("currentDay");
-//   curDate.innerHTML = dateFormat;
-//   var a = moment().format("HH");
-//   $("#clearFieldsBtn").click(function(dateFormat) {
-//       dateFormat.preventDefault,
-//       $("textarea").val(""),
-//       localStorage.clear()
-//   });
-//   $(".time-div").each(function() {
-//       var t = $(this).attr("id").split("-")[1];
-//       a == t ? ($(this).addClass("present"),
-//       $(this).children(".description").addClass("white-text")) : a < t ? ($(this).removeClass("present"),
-//       $(this).addClass("future")) : t < a && ($(this).removeClass("future"),
-//       $(this).addClass("past"))
-//   });
-// });
-
-
-
-// $(function () {
-//   saveBtnEl.on('click', function(){
-//     alert('ive been clicked');
-//   })});
-
-//   // TODO: Add a listener for click events on the save button. This code should
-//   // use the id in the containing time-block as a key to save the user input in
-//   // local storage. HINT: What does `this` reference in the click listener
-//   // function? How can DOM traversal be used to get the "hour-x" id of the
-//   // time-block containing the button that was clicked? How might the id be
-//   // useful when saving the description in local storage?
-//   //
-//   // TODO: Add code to apply the past, present, or future class to each time
-//   // block by comparing the id to the current hour. HINTS: How can the id
-//   // attribute of each time-block be used to conditionally add or remove the
-//   // past, present, and future classes? How can Day.js be used to get the
-//   // current hour in 24-hour time?
-//   //
-//   // TODO: Add code to get any user input that was saved in localStorage and set
-//   // the values of the corresponding textarea elements. HINT: How can the id
-//   // attribute of each time-block be used to do this?
-//   //
-//   // TODO: Add code to display the current date in the header of the page.
   
 $(document).ready(function() {
-  var bg = moment().format("MMMM Do YYYY");
-  let e = document.getElementById("currentDay");
-  e.innerHTML = bg;
+  var r= moment().format("MMMM Do YYYY");
+  let d = document.getElementById("currentDay");
+  d.innerHTML = r;
   var a = moment().format("HH");
   $("#clearFieldsBtn").click(function(t) {
-      bg.preventDefault,
+      r.preventDefault,
       $("textarea").val(""),
       localStorage.clear()
   }),
   $(".time-div").each(function() {
-      var bg = $(this).attr("id").split("-")[1];
-      a == bg ? ($(this).addClass("present"),
-      $(this).children(".description").addClass("white-text")) : a < t ? ($(this).removeClass("present"),
-      $(this).addClass("future")) : t < a && ($(this).removeClass("future"),
+      var w = $(this).attr("id").split("-")[1];
+      a == w ? ($(this).addClass("present"),
+      $(this).children(".description").addClass("white-text")) : a < w ? ($(this).removeClass("present"),
+      $(this).addClass("future")) : w < a && ($(this).removeClass("future"),
       $(this).addClass("past"))
   }),
-  $(".saveBtn").click(function(bg) {
+  $(".saveBtn").click(function(r) {
     var savedMessageEl = $('saved-message');  
-    bg.preventDefault();
+    r.preventDefault();
       var e = $(this).siblings(".time-block").val()
-        , date = $(this).parent().attr("id").split("-")[1];
-      localStorage.setItem(bg, e)
-      document.getElementById('saved-message').textContent = 'Stored to local storage!';   
+        , t = $(this).parent().attr("id").split("-")[1];
+      localStorage.setItem(t, e)
+      document.getElementById('saved-message').textContent = 'Stored to local storage!';
+   
   }),
-  $("#clearFieldsBtn").click(function(t) {
-    bg.preventDefault,
+  $("#clearFieldsBtn").click(function(r) {
+    r.preventDefault,
     $("textarea").val(""),
     localStorage.clear()
 }),

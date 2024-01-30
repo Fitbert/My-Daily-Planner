@@ -13,6 +13,7 @@
 The My Planner is for updating todo tasks for the work day. We are able to add daily tasks by the hour, as well as track the day with color.  
 
 [gif](./images/Work%20Day%20Scheduler.gif)
+./images/Screenshot 2024-01-30 145025.png
 https://fitbert.github.io/My-Daily-Planner/
 
 ## Credits
